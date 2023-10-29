@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { QuanLyService } from 'src/app/Services/QuanLy.service';
 import {SinhVien} from 'src/app/Models/SinhVien'
+
 @Component({
-  selector: 'app-Home',
-  templateUrl: './Home.component.html',
-  styleUrls: ['./Home.component.css']
+  selector: 'app-TableStudent',
+  templateUrl: './TableStudent.component.html',
+  styleUrls: ['./TableStudent.component.css']
 })
-export class HomeComponent implements OnInit {
+export class TableStudentComponent implements OnInit {
   SinhVienList: SinhVien[]=[];
   constructor(private service: QuanLyService) {}
 
@@ -20,5 +21,4 @@ export class HomeComponent implements OnInit {
       }
     })
   }
-
 }
