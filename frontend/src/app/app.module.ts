@@ -2,7 +2,7 @@ import { AddStudentComponent } from './Pages/Student/Add-Student/Add-Student.com
 import { TableStudentComponent } from './Pages/Student/TableStudent/TableStudent.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -10,8 +10,8 @@ import {Routes, RouterModule} from '@angular/router'
 import { SidebarComponent } from './Pages/Sidebar/Sidebar.component';
 
 const appRoutes: Routes = [
-  {path: 'table', component: TableStudentComponent},
-  {path: 'add', component: AddStudentComponent}
+  {path: 'tableStudent', component: TableStudentComponent},
+  {path: 'addStudent', component: AddStudentComponent}
 ]
 
 @NgModule({
@@ -26,6 +26,7 @@ const appRoutes: Routes = [
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
