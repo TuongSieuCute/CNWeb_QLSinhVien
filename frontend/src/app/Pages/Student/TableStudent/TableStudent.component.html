@@ -34,7 +34,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let sinhVien of SinhVienList">
+          <tr *ngFor="let sinhVien of SinhVienList | paginate: {
+            itemsPerPage: 5, currentPage: page, totalItems: count
+          }">
             <td>{{ sinhVien.masv }}</td>
             <td>{{ sinhVien.hotensv }}</td>
             <td>{{ sinhVien.gioitinh }}</td>
@@ -49,7 +51,9 @@
           </tr>
         </tbody>
       </table>
-      <br />
+      <div>
+        <pagination-controls (pageChange)="page=$event"></pagination-controls>
+      </div>
     </div>
   </div>
 </section>

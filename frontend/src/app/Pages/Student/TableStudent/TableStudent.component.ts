@@ -12,7 +12,8 @@ searchQuery: HTMLInputElement;
 })
 export class TableStudentComponent implements OnInit {
   SinhVienList: SinhVien[] = [];
-
+  page: number=1;
+  count: any;
   constructor(private service: QuanLyService, private router: Router) {}
 
   ngOnInit(): void {
@@ -38,7 +39,7 @@ export class TableStudentComponent implements OnInit {
   deleteSinhVien(id: any) {
     this.service.delete(id).subscribe({
       next: (response) => {
-        console.log('Xóa thành công');
+        alert('Xoá thành công');
         this.loadSinhVienList();
       },
       error: (error) => {
