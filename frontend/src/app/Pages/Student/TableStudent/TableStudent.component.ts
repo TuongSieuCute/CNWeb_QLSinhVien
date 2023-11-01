@@ -15,10 +15,10 @@ export class TableStudentComponent implements OnInit {
   constructor(private service: QuanLyService) {}
 
   ngOnInit(): void {
-    this.postList();
+    this.getList();
   }
 
-  postList(): void {
+  getList(): void {
     this.service.getSinhVien().subscribe({
       next:(list)=>{
         this.SinhVienList=list;
@@ -27,5 +27,9 @@ export class TableStudentComponent implements OnInit {
         })
       }
     })
+  }
+
+  onDelete(masv: string){
+    alert(masv);
   }
 }
