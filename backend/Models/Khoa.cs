@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace backend.Models;
 
 public partial class Khoa
 {
+    [Key]
     public string Mak { get; set; } = null!;
 
     public string Tenk { get; set; } = null!;

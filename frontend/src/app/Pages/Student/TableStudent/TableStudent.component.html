@@ -1,20 +1,27 @@
 <section class="dashboard">
   <div class="top">
     <div class="search-box">
-      <form method="get">
+      <form (submit)="searchByHoTen(searchQuery.value)">
         <i class="uil uil-search"></i>
-        <input type="text" name="search" placeholder="Tìm kiếm theo mssv..." />
+        <input type="text" name="search" #searchQuery placeholder="Tìm kiếm theo Họ Và Tên..." />
+        <button type="submit">Tìm kiếm</button>
       </form>
     </div>
   </div>
   <div class="dash-content">
     <div class="overview">
       <div class="title">
-        <i class="uil uil-comment-dots"></i>
-        <span class="text">Danh sách thông tin sinh viên</span>  
+        <div class="title-container">
+          <i class="uil uil-comment-dots"></i>
+          <span class="text">Danh sách thông tin sinh viên</span>
+        </div>
+        <div>
+          <a class="btn btn-outline-success" routerLinkActive="active" routerLink="/add">Thêm sinh viên</a>
+        </div>
+
       </div>
-      <table class="table">
-        <thead class="table-primary">
+      <table class="table table-striped">
+        <thead>
           <tr>
             <th>MSSV</th>
             <th>Họ và tên</th>
@@ -23,42 +30,26 @@
             <th>Địa chỉ</th>
             <th>Số điện thoại</th>
             <th>Email</th>
-            <th style="text-align: center">Thao tác</th>
+            <th>Thao tác</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let SinhVien of SinhVienList | paginate: {
-            itemsPerPage: 5,
-            currentPage: page,
-            totalItems: count};">
-            <td>{{SinhVien.masv}}</td>
-            <td>{{SinhVien.hotensv}}</td>
-            <td>{{SinhVien.gioitinh}}</td>
-            <td>{{SinhVien.ngaysinh | date: 'dd/MM/yyyy'}}</td>
-            <td>{{SinhVien.diachi}}</td>
-            <td>{{SinhVien.sodienthoai}}</td>
-            <td>{{SinhVien.email}}</td>
-            <td style="text-align: center">
-              <a class="btn btn-outline-primary" style="margin-right: 5px"
-                >Sửa</a
-              >
-              <a
-                onclick="return confirm('Bạn có muốn xoá sinh viên này không !');"
-                class="btn btn-outline-danger"
-                >Xóa</a
-              >
+          <tr *ngFor="let sinhVien of SinhVienList">
+            <td>{{ sinhVien.masv }}</td>
+            <td>{{ sinhVien.hotensv }}</td>
+            <td>{{ sinhVien.gioitinh }}</td>
+            <td>{{ sinhVien.ngaysinh | date:'dd/MM/yyyy' }}</td>
+            <td>{{ sinhVien.diachi }}</td>
+            <td>{{ sinhVien.sodienthoai }}</td>
+            <td>{{ sinhVien.email }}</td>
+            <td>
+              <button class="btn btn-primary" (click)="editSinhVien(sinhVien.masv)">Sửa</button>
+              <button class="btn btn-danger ms-2" (click)="deleteSinhVien(sinhVien.masv)">Xóa</button>
             </td>
           </tr>
         </tbody>
       </table>
-      <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-        <div>
-          <pagination-controls (pageChange)="page=$event"></pagination-controls>
-        </div>
-        <div>
-          <a class="btn btn-outline-success" routerLinkActive="active" routerLink="/addStudent">Thêm sinh viên</a>
-        </div>
-      </div>
+      <br />
     </div>
   </div>
 </section>
