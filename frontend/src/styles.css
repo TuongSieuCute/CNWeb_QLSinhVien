@@ -54,17 +54,17 @@ body.dark .activity-data::-webkit-scrollbar-thumb:hover{
     background: #3A3B3C;
 }
 
-nav{
-    position: fixed;
+/* nav{
+    position: relative;
     top: 0;
     left: 0;
     height: 100%;
-    width: 250px;
+    width: 100%;
     padding: 10px 14px;
     background-color: var(--panel-color);
     border-right: 1px solid var(--border-color);
     transition: var(--tran-05);
-}
+} */
 nav.close{
     width: 73px;
 }
@@ -148,11 +148,10 @@ nav.close li a .link-name{
 }
 
 .menu-items .logout-mode{
-    padding-top: 10px;
+    padding-top: 20px;
     border-top: 1px solid var(--border-color);
 }
 
- 
 .menu-items li a:hover i,
 .menu-items li a:hover .link-name{
     color: var(--primary-color);
@@ -163,8 +162,8 @@ nav.close li a .link-name{
 }
 
 .dashboard{
-    position: relative;
-    left: 250px;
+    position: absolute;
+    /* left: 250px; */
     background-color: var(--panel-color);
     min-height: 100vh;
     width: calc(100% - 250px);

@@ -9,9 +9,16 @@ import {SinhVien} from 'src/app/Models/SinhVien'
 })
 export class TableStudentComponent implements OnInit {
   SinhVienList: SinhVien[]=[];
+  page: number=1;
+  count: any;
+
   constructor(private service: QuanLyService) {}
 
   ngOnInit(): void {
+    this.postList();
+  }
+
+  postList(): void {
     this.service.getSinhVien().subscribe({
       next:(list)=>{
         this.SinhVienList=list;

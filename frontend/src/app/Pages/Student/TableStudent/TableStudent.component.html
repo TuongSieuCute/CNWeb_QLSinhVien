@@ -11,9 +11,8 @@
     <div class="overview">
       <div class="title">
         <i class="uil uil-comment-dots"></i>
-        <span class="text">Danh sách thông tin sinh viên</span>
+        <span class="text">Danh sách thông tin sinh viên</span>  
       </div>
-
       <table class="table">
         <thead class="table-primary">
           <tr>
@@ -28,7 +27,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let SinhVien of SinhVienList">
+          <tr *ngFor="let SinhVien of SinhVienList | paginate: {
+            itemsPerPage: 5,
+            currentPage: page,
+            totalItems: count};">
             <td>{{SinhVien.masv}}</td>
             <td>{{SinhVien.hotensv}}</td>
             <td>{{SinhVien.gioitinh}}</td>
@@ -49,12 +51,14 @@
           </tr>
         </tbody>
       </table>
-      <br />
-      <div style="float: right; margin-right: 25px">
-        <a class="btn btn-outline-success" routerLinkActive="active" routerLink="/add">Thêm sinh viên</a>
+      <div style="display: flex; justify-content: space-between; margin-top: 15px;">
+        <div>
+          <pagination-controls (pageChange)="page=$event"></pagination-controls>
+        </div>
+        <div>
+          <a class="btn btn-outline-success" routerLinkActive="active" routerLink="/addStudent">Thêm sinh viên</a>
+        </div>
       </div>
-      <br />
-      <br />
     </div>
   </div>
 </section>
