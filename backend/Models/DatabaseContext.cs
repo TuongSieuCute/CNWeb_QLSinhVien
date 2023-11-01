@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
@@ -28,7 +28,7 @@ public partial class DatabaseContext : DbContext
     public virtual DbSet<Taikhoan> Taikhoans { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=ADMIN\\SQLEXPRESS;Database=QUANLYSINHVIEN;Trusted_Connection=True;TrustServerCertificate=True");
+        => optionsBuilder.UseSqlServer("Server=DESKTOP-GOEUFGD\\SQLEXPRESS;Database=QUANLYSINHVIEN;Trusted_Connection=True;TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

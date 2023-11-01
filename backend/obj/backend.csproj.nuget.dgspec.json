@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\Desktop\\File Code\\WebAPI\\DoAn\\backend\\backend.csproj": {}
+    "D:\\Documents\\Github\\CNWeb_QLSinhVien\\backend\\backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\Desktop\\File Code\\WebAPI\\DoAn\\backend\\backend.csproj": {
+    "D:\\Documents\\Github\\CNWeb_QLSinhVien\\backend\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\File Code\\WebAPI\\DoAn\\backend\\backend.csproj",
+        "projectUniqueName": "D:\\Documents\\Github\\CNWeb_QLSinhVien\\backend\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "C:\\Users\\Administrator\\Desktop\\File Code\\WebAPI\\DoAn\\backend\\backend.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Desktop\\File Code\\WebAPI\\DoAn\\backend\\obj\\",
+        "projectPath": "D:\\Documents\\Github\\CNWeb_QLSinhVien\\backend\\backend.csproj",
+        "packagesPath": "C:\\Users\\DAT IT\\.nuget\\packages\\",
+        "outputPath": "D:\\Documents\\Github\\CNWeb_QLSinhVien\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DAT IT\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

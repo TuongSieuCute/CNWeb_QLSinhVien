@@ -1,12 +1,18 @@
 using backend.Models;
 using Microsoft.EntityFrameworkCore.Storage;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
-var configuration =builder.Configuration;
+var configuration = builder.Configuration;
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllersWithViews()
+       .AddJsonOptions(options =>
+       {
+           options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+       });
+
 builder.Services.AddDbContext<DatabaseContext>(options => {
     var connectionString = configuration.GetConnectionString("connec");
 });
@@ -15,11 +21,15 @@ builder.Services.AddDbContext<DatabaseContext>(options => {
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddCors(policy =>{
-    policy.AddPolicy("defaultPolicy", options =>{
+// Add CORS policy to allow requests from all origins.
+
+builder.Services.AddCors(policy =>
+{
+    policy.AddPolicy("defaultPolicy", options =>
+    {
         options.AllowAnyHeader();
         options.AllowAnyMethod();
-        options.AllowAnyOrigin();
+        options.SetIsOriginAllowed((origin) => true);
     });
 });
 

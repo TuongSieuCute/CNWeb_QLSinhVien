@@ -1,0 +1,97 @@
+<div class="container">
+    <h1 class="mt-3 text-center">Form thêm sinh viên</h1>
+    <form (submit)="updateStudent()">
+      <div class="mb-3 mt-3">
+        <label for="masv">Mã sinh viên</label><br />
+        <input
+          type="text"
+          [(ngModel)]="newStudent.Masv"
+          name="masv"
+          id="masv"
+          class="form-control"
+          required
+          placeholder="Mời nhập mã sinh viên"
+        />
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="hoten">Họ tên sinh viên</label>
+        <input
+          type="text"
+          id="hoten"
+          class="form-control"
+          [(ngModel)]="newStudent.Hotensv"
+          name="hoten"
+          required
+          placeholder="Mời nhập họ tên sinh viên"
+        />
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="gioiT">Giới tính</label>
+        <select id="gioiT" name="gioiT" class="form-control" [(ngModel)]="newStudent.Gioitinh">
+          <option value="Nam">Nam</option>
+          <option value="Nữ">Nữ</option>
+          <option value="Khác">Khác</option>
+        </select>
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="ngaysinh">Ngày sinh</label>
+        <input
+          type="date"
+          id="ngaysinh"
+          class="form-control"
+          name="ngaysinh"
+          [(ngModel)]="newStudent.Ngaysinh"
+          required
+          placeholder="Mời nhập ngày sinh"
+        />
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="diachi">Địa chỉ</label>
+        <input
+          type="text"
+          id="diachi"
+          class="form-control"
+          name="diachi"
+          [(ngModel)]="newStudent.Diachi"
+          required
+          placeholder="Mời nhập địa chỉ"
+        />
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="sdt">Số điện thoại</label>
+        <input
+          type="text"
+          id="sdt"
+          class="form-control"
+          name="sdt"
+          [(ngModel)]="newStudent.Sodienthoai"
+          required
+          placeholder="Mời nhập số điện thoại"
+        />
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="email">Email</label>
+        <input
+          type="text"
+          id="email"
+          class="form-control"
+          name="email"
+          [(ngModel)]="newStudent.Email"
+          required
+          placeholder="Mời nhập email"
+        />
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="makhoa">Mã khoa</label>
+        <select id="makhoa" name="makhoa" class="form-control" [(ngModel)]="newStudent.Mak">
+          <option value="K01">Công nghệ thông tin</option>
+          <option value="K02">Địa lý</option>
+          <option value="K03">Hóa học</option>
+          <option value="K04">Toán</option>
+          <option value="K05">Ngữ văn</option>
+        </select>
+      </div>
+      <button type="submit" name="submit" class="btn btn-primary">Thêm sinh viên</button>
+    </form>
+  </div>
+  
