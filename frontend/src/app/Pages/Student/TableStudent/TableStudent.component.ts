@@ -12,16 +12,16 @@ searchQuery: HTMLInputElement;
 })
 export class TableStudentComponent implements OnInit {
   SinhVienList: SinhVien[] = [];
-  page: number=1;
-  count: any;
-  constructor(private service: QuanLyService, private router: Router) {}
+  currentPage: number = 1; 
+
+  constructor(public QuanLyService: QuanLyService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadSinhVienList(); 
   }
 
   loadSinhVienList() {
-    this.service.getAllData().subscribe({
+    this.QuanLyService.getAllData().subscribe({
       next: (list) => {
         this.SinhVienList = list.$values;
       },
@@ -37,20 +37,21 @@ export class TableStudentComponent implements OnInit {
   }
 
   deleteSinhVien(id: any) {
-    this.service.delete(id).subscribe({
-      next: (response) => {
-        alert('Xoá thành công');
-        this.loadSinhVienList();
-      },
-      error: (error) => {
-        console.error('Lỗi khi xóa sinh viên', error);
-      }
-    });
+      this.QuanLyService.delete(id).subscribe({
+        next: (response) => {
+          alert('Xoá thành công');
+          this.loadSinhVienList();
+        },
+        error: (error) => {
+          console.error('Lỗi khi xóa sinh viên', error);
+        }
+      });
+    
   }
 
   searchByHoTen(hoten: string) {
     if (hoten) {
-      this.service.search(hoten).subscribe({
+      this.QuanLyService.search(hoten).subscribe({
         next: (list) => {
           this.SinhVienList = list.$values;
         },

@@ -63,8 +63,6 @@ namespace backend.Controllers
             return CreatedAtAction(nameof(GetByMasv), new { masv = sinhvien.Masv }, sinhvien);
         }
 
-
-
         // Sửa thông tin sinh viên theo Mã sinh viên
         [HttpPut("Edit/{masv}")]
         public async Task<IActionResult> Edit(string masv, Sinhvien sinhvien)

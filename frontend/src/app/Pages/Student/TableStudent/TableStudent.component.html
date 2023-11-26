@@ -1,59 +1,58 @@
-<section class="dashboard">
+<div
+  class="container"
+  [ngClass]="{ 'sidebar-open-page': QuanLyService.isSidebarOpen }"
+>
   <div class="top">
-    <div class="search-box">
-      <form (submit)="searchByHoTen(searchQuery.value)">
-        <i class="uil uil-search"></i>
-        <input type="text" name="search" #searchQuery placeholder="Tìm kiếm theo Họ Và Tên..." />
-        <button type="submit">Tìm kiếm</button>
-      </form>
+    <div class="right">
+      <i class="fas fa-list"></i>
+      <p>Danh sách sinh viên</p>
     </div>
-  </div>
-  <div class="dash-content">
-    <div class="overview">
-      <div class="title">
-        <div class="title-container">
-          <i class="uil uil-comment-dots"></i>
-          <span class="text">Danh sách thông tin sinh viên</span>
-        </div>
-        <div>
-          <a class="btn btn-outline-success" routerLinkActive="active" routerLink="/add">Thêm sinh viên</a>
-        </div>
-
+    <div class="left">
+      <div class="search">
+        <i class="fab fa-searchengin"></i>
+        <input type="text" placeholder="Tìm kiếm..." />
       </div>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>MSSV</th>
-            <th>Họ và tên</th>
-            <th>Giới tính</th>
-            <th>Ngày sinh</th>
-            <th>Địa chỉ</th>
-            <th>Số điện thoại</th>
-            <th>Email</th>
-            <th>Thao tác</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let sinhVien of SinhVienList | paginate: {
-            itemsPerPage: 5, currentPage: page, totalItems: count
-          }">
-            <td>{{ sinhVien.masv }}</td>
-            <td>{{ sinhVien.hotensv }}</td>
-            <td>{{ sinhVien.gioitinh }}</td>
-            <td>{{ sinhVien.ngaysinh | date:'dd/MM/yyyy' }}</td>
-            <td>{{ sinhVien.diachi }}</td>
-            <td>{{ sinhVien.sodienthoai }}</td>
-            <td>{{ sinhVien.email }}</td>
-            <td>
-              <button class="btn btn-primary" (click)="editSinhVien(sinhVien.masv)">Sửa</button>
-              <button class="btn btn-danger ms-2" (click)="deleteSinhVien(sinhVien.masv)">Xóa</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div>
-        <pagination-controls (pageChange)="page=$event"></pagination-controls>
+      <div class="button">
+        <i class="fas fa-plus"></i>
+        <button routerLinkActive="active" routerLink="/addStudent">Tạo sinh viên</button>
       </div>
     </div>
   </div>
-</section>
+  <div>
+    <table>
+      <tr>
+        <th>Mã số sinh viên</th>
+        <th>Họ và tên</th>
+        <th>Giới tính</th>
+        <th>Ngày sinh</th>
+        <th>Địa chỉ</th>
+        <th>Số điện thoại</th>
+        <th>Email</th>
+        <th>Thao tác</th>
+      </tr>
+      <tr *ngFor="let sv of SinhVienList | paginate: {itemsPerPage: 10, currentPage: currentPage}">
+        <td>{{ sv.masv }}</td>
+        <td>{{ sv.hotensv }}</td>
+        <td>{{ sv.gioitinh }}</td>
+        <td>{{ sv.ngaysinh | date : "dd/MM/yyyy" }}</td>
+        <td>{{ sv.diachi }}</td>
+        <td>{{ sv.sodienthoai }}</td>
+        <td>{{ sv.email }}</td>
+        <td class="operation">
+          <button (click)="editSinhVien(sv.masv)">
+            <i style="color: blue" class="fas fa-edit"></i>
+          </button>
+          <button (click)="deleteSinhVien(sv.masv)"><i style="color: red" class="fas fa-trash-alt"></i></button>
+        </td>
+      </tr>
+    </table>
+    <div class="pagination">
+      <pagination-controls  
+      previousText=""
+      nextText=""
+      previousLabel=" "
+      nextLabel=" " 
+      (pageChange)="currentPage=$event"></pagination-controls>
+    </div>
+  </div>
+</div>

@@ -19,14 +19,14 @@ export class EditStudentComponent {
     Mak: ''
   };
 
-  constructor(private quanLyService: QuanLyService, private router: Router, private route: ActivatedRoute) { }
+  constructor(public QuanLyService: QuanLyService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
       const studentId = params['id'];
 
       if (studentId) {
-        this.quanLyService.getById(studentId).subscribe({
+        this.QuanLyService.getById(studentId).subscribe({
           next: (studentData) => {
             console.log(studentData);
 
@@ -60,9 +60,9 @@ export class EditStudentComponent {
     const makNavigation = this.createMakNavigation(this.newStudent.Mak);
     this.newStudent.MakNavigation = makNavigation;
 
-    this.quanLyService.edit(this.newStudent.Masv, this.newStudent).subscribe({
+    this.QuanLyService.edit(this.newStudent.Masv, this.newStudent).subscribe({
       next: (response) => {
-        console.log('Cập nhật sinh viên thành công');
+        alert('Cập nhật sinh viên thành công');
         this.router.navigate(['/student-list']); // Redirect back to the student list page after the update
       },
       error: (error) => {

@@ -7,7 +7,8 @@ export const environment = {
   apiUrl: 'http://localhost:5183/',
   path: {
     home: 'Home/GetAll', 
-    getById: 'Home/GetByMasv', 
+    getById: 'Home/GetByMasv',
+    page: 'Home/Page?pageNumber=1&pageSize=10', 
     search: 'Home/Search', 
     create: 'Home/Add', 
     edit: 'Home/Edit', 

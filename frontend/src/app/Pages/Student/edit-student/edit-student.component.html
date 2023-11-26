@@ -1,7 +1,13 @@
-<div class="container">
-    <h1 class="mt-3 text-center">Form thay đổi thông tin sinh viên</h1>
-    <form (submit)="updateStudent()">
-      <div class="mb-3 mt-3">
+<div
+  class="containerAdd"
+  [ngClass]="{ 'sidebar-open-page-editStudent': QuanLyService.isSidebarOpen }"
+>
+  <div class="topAdd">
+    <h3>Cập nhật thông tin sinh viên</h3>
+  </div>
+  <form (submit)="updateStudent()">
+    <div class="ingredientForm">
+      <div>
         <label for="masv">Mã sinh viên</label><br />
         <input
           type="text"
@@ -10,10 +16,10 @@
           id="masv"
           class="form-control"
           required
-          placeholder="Mời nhập mã sinh viên"
+          placeholder="Nhập Mã sinh viên"
         />
       </div>
-      <div class="mb-3 mt-3">
+      <div>
         <label for="hoten">Họ tên sinh viên</label>
         <input
           type="text"
@@ -22,18 +28,26 @@
           [(ngModel)]="newStudent.Hotensv"
           name="hoten"
           required
-          placeholder="Mời nhập họ tên sinh viên"
+          placeholder="Nhập Họ và tên"
         />
       </div>
-      <div class="mb-3 mt-3">
+    </div>
+
+    <div class="ingredientForm">
+      <div>
         <label for="gioiT">Giới tính</label>
-        <select id="gioiT" name="gioiT" class="form-control" [(ngModel)]="newStudent.Gioitinh">
+        <select
+          id="gioiT"
+          name="gioiT"
+          class="form-control"
+          [(ngModel)]="newStudent.Gioitinh"
+        >
           <option value="Nam">Nam</option>
           <option value="Nữ">Nữ</option>
           <option value="Khác">Khác</option>
         </select>
       </div>
-      <div class="mb-3 mt-3">
+      <div>
         <label for="ngaysinh">Ngày sinh</label>
         <input
           type="date"
@@ -42,10 +56,13 @@
           name="ngaysinh"
           [(ngModel)]="newStudent.Ngaysinh"
           required
-          placeholder="Mời nhập ngày sinh"
+          placeholder="Nhập Ngày sinh"
         />
       </div>
-      <div class="mb-3 mt-3">
+    </div>
+    
+    <div class="ingredientForm">
+      <div>
         <label for="diachi">Địa chỉ</label>
         <input
           type="text"
@@ -54,10 +71,10 @@
           name="diachi"
           [(ngModel)]="newStudent.Diachi"
           required
-          placeholder="Mời nhập địa chỉ"
+          placeholder="Nhập Địa chỉ"
         />
       </div>
-      <div class="mb-3 mt-3">
+      <div>
         <label for="sdt">Số điện thoại</label>
         <input
           type="text"
@@ -66,10 +83,13 @@
           name="sdt"
           [(ngModel)]="newStudent.Sodienthoai"
           required
-          placeholder="Mời nhập số điện thoại"
+          placeholder="Nhập Số điện thoại"
         />
       </div>
-      <div class="mb-3 mt-3">
+    </div>
+
+    <div class="ingredientForm">
+      <div>
         <label for="email">Email</label>
         <input
           type="text"
@@ -78,12 +98,17 @@
           name="email"
           [(ngModel)]="newStudent.Email"
           required
-          placeholder="Mời nhập email"
+          placeholder="Nhập Địa chỉ Email"
         />
       </div>
-      <div class="mb-3 mt-3">
+      <div>
         <label for="makhoa">Mã khoa</label>
-        <select id="makhoa" name="makhoa" class="form-control" [(ngModel)]="newStudent.Mak">
+        <select
+          id="makhoa"
+          name="makhoa"
+          class="form-control"
+          [(ngModel)]="newStudent.Mak"
+        >
           <option value="K01">Công nghệ thông tin</option>
           <option value="K02">Địa lý</option>
           <option value="K03">Hóa học</option>
@@ -91,7 +116,9 @@
           <option value="K05">Ngữ văn</option>
         </select>
       </div>
-      <button type="submit" name="submit" class="btn btn-primary">Thay đổi thông tin</button>
-    </form>
-  </div>
-  
+    </div>
+    <div class="bottomAdd">
+      <button type="submit" name="submit">Cập nhật sinh viên</button>
+    </div>
+  </form>
+</div>

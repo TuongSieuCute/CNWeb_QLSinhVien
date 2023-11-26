@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { QuanLyService } from 'src/app/Services/QuanLy.service'; // Import QuanLyService
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-Add-Student',
@@ -19,7 +18,7 @@ export class AddStudentComponent implements OnInit {
     Mak: ''
   };
 
-  constructor(private quanLyService: QuanLyService, private router: Router) {}
+  constructor(public QuanLyService: QuanLyService) {}
 
   ngOnInit() {}
 
@@ -27,10 +26,9 @@ export class AddStudentComponent implements OnInit {
     const makNavigation = this.createMakNavigation(this.newStudent.Mak);
     this.newStudent.MakNavigation = makNavigation;
 
-    this.quanLyService.create(this.newStudent).subscribe({
+    this.QuanLyService.create(this.newStudent).subscribe({
       next: (response) => {
-        console.log('Thêm sinh viên thành công');
-        this.router.navigate(['/student-list']);
+        alert('Thêm sinh viên thành công');
       },
       error: (error) => {
         console.error('Lỗi khi thêm sinh viên', error);

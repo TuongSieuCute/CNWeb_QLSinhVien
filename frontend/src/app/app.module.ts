@@ -10,10 +10,12 @@ import {Routes, RouterModule} from '@angular/router'
 import { SidebarComponent } from './Pages/Sidebar/Sidebar.component';
 import { FormsModule } from '@angular/forms';
 import { EditStudentComponent } from './Pages/Student/edit-student/edit-student.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [
-  {path: 'table', component: TableStudentComponent},
-  {path: 'add', component: AddStudentComponent}
+  {path: 'student', component: TableStudentComponent},
+  {path: 'addStudent', component: AddStudentComponent},
+  {path: 'editStudent', component: EditStudentComponent},
 ]
 
 @NgModule({
@@ -31,6 +33,7 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes),
     NgxPaginationModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

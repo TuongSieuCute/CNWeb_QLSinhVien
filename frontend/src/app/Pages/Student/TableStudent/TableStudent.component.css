@@ -1,10 +1,5 @@
-.title{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.title-container{
-    display: flex;
-    flex-direction: row;
-}
+.sidebar-open-page{
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding-left: 30px;
+  }

@@ -8,6 +8,13 @@ import { SinhVien } from '../Models/SinhVien';
   providedIn: 'root'
 })
 export class QuanLyService {
+  // Tạo biến đóng mở Sidebar
+  isSidebarOpen: boolean = false;
+
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
+  }
+
   private baseUrl = environment.apiUrl; // Sử dụng địa chỉ cơ sở từ environment.ts
 
   constructor(private http: HttpClient) { }

@@ -1,5 +1,5 @@
-.container{
-    position: relative;
-    left: 100px;
-    width: 80%;
+.sidebar-open-page-editStudent {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    padding-left: 30px;
 }

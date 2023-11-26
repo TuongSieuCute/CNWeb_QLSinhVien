@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Fg5vBtsIYiknSSBIdmGLwm2GStvfrx4KQEcYwsPNMhCYgygaDoAK0fa05zbLCn064LFkBS+smIBirRRSRjmYJg==",
+  "dgSpecHash": "2uGOmC7u/XvrF+ndpKXAKvNpb1jqKWcUQTdv64ZC+VCMFIS/KkxJ6INbee0Imc0aVJV824kEpJY+LscOrpjT7A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\File Code\\WebAPI\\DoAn\\backend\\backend.csproj",
+  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\Môn CNWeb\\CNWeb_QLSinhVien\\backend\\backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

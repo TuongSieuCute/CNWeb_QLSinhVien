@@ -1,11 +1,101 @@
-nav{
+.sidebar {
+    background-color: #B0DAFF;
     position: fixed;
+    z-index: 1;
     top: 0;
-    left: 0;
-    height: 100%;
+    width: 80px;
+    height: 100vh;
+    transition: ease 0.2s;
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        padding: 15px 15px 0 15px;
+        width: 100%;
+
+        .logo {
+        background-color: #fff;
+        text-align: center;
+        width: 50px;
+        min-width: 50px;
+        border-radius: 15px;
+        padding: 5px;
+        font-size: 24px;
+        font-weight: 900;
+        cursor: pointer;
+        border: none;
+        }
+
+        .logo-text {
+        margin-left: 24px;
+        font-size: 26px;
+        font-weight: 700;
+        color: #000;
+        }
+    }
+}
+
+.sidebar-open {
     width: 250px;
-    padding: 10px 14px;
-    background-color: var(--panel-color);
-    border-right: 1px solid var(--border-color);
-    transition: var(--tran-05);
+}
+
+.sidebar-list {
+    list-style: none;
+    padding: 15px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100% - 60px);
+    cursor: pointer;
+
+    .sidebar-item {
+        width: 100%;
+        margin-bottom: 10px;
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            height: 50px;
+            color: #000;
+            border-radius: 15px;
+            text-decoration: none;
+            transition: all .3s ease;
+
+            .sidebar-icon {
+                font-size: 22px;
+                width: 32px;
+                min-width: 32px;
+                margin: 0;
+                text-align: center;
+                margin-left: 9px;
+            }
+
+            .sidebar-text {
+                margin-left: 32px;
+                font-size: 18px;
+            }
+        }
+    }
+
+    .sidebar-item:hover {
+        .sidebar-link {
+            background-color: #fff;
+            color: #000;
+        }
+    }
+}
+
+.sidebar-next {
+    margin-left: 250px;
+    height: 55px;
+}
+
+.active {
+    background-color: #fff;
+
+    .sidebar-icon,
+    .sidebar-text {
+        color: #000;
+    }
 }

@@ -1,59 +1,19 @@
-<nav>
-    <div class="menu-items">
-        <ul class="nav-links">
-            <li>
-                <a [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active" routerLink="/">
-                    <i class="uil uil-chat-info"></i>
-                    <span class="link-name">Tiếp nhận</span>
-                </a>
-            </li>
-            <li>
-                <a routerLinkActive="active" routerLink="/table">
-                    <i class="uil uil-users-alt"></i>
-                    <span class="link-name">Sinh viên</span>
-                </a>
-            </li>
-            <li>
-                <a>
-                    <i class="uil uil-book-reader"></i>
-                    <span class="link-name">Giáo viên</span>
-                </a>
-            </li>
-            <li>
-                <a>
-                    <i class="uil uil-book-open"></i>
-                    <span class="link-name">Môn học</span>
-                </a>
-            </li>
-            <li>
-                <a>
-                    <i class="uil uil-presentation-edit"></i>
-                    <span class="link-name">Lớp học phần</span>
-                </a>
-            </li>
-            <li>
-                <a>
-                    <i class="uil uil-cog"></i>
-                    <span class="link-name">Cấp phép</span>
-                </a>
-            </li>
-            <li>
-                <a>
-                    <i class="uil uil-user-plus" ></i>
-                    <span class="link-name" >Tạo tài khoản</span>
-                </a>
-            </li>
-        </ul>
-            
-        <ul class="logout-mode">
-            <li>
-                <a>
-                    <i class="uil uil-signout"></i>
-                    <span class="link-name">Đăng xuất</span>
-                </a>
-            </li>
-        </ul>
+<div class="sidebar" [ngClass]="{'sidebar-open': QuanLyService.isSidebarOpen}">
+    <div class="logo-container">
+        <button class="logo" (click)="toggle()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="logo-text" *ngIf="isSidebarOpen">Admin</div>
     </div>
-</nav>
-
-
+    <ul class="sidebar-list">
+        <li class="sidebar-item" *ngFor="let data of sideData">
+            <a class="sidebar-link" [routerLink]="[data.routerLink]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="sidebar-icon" [class]="data.icon"></i>
+                <span class="sidebar-text" *ngIf="isSidebarOpen">{{data.text}}</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="sidebar-next">
+    
+</div>
